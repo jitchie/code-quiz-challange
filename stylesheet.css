@@ -73,8 +73,15 @@
   height: 100%;
   z-index: 1001;
 }
-.element-wrapper input:checked + label {
-  color: red;
+.element-wrapper input:hover + label {
+  color: blue;
+}
+.true {
+  background-color: green;
+}
+
+.false {
+  background-color: red;
 }
 .card {
   display: flex;

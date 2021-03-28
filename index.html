@@ -9,15 +9,17 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>code quiz challange</title>
   </head>
   <body>
     <header>
+      
+      <h3>Seconds left: <span id = "timeLeftDisplay">60</span></h3>
 
 
-
-
-    </header>
+    </header> 
+    <div id="quiz-time-left">
     <div class="wrapper" id="startPage">
       <h1>Code quiz challange</h1>
       <p>
@@ -29,25 +31,25 @@
 
     <div class="wrapper" id="stepOne">
       <div class="inner-wrapper">
-      <h1>question one</h1>
+      <h1>What is a global scoped variable?</h1>
       <div class="card">
-        <span class="element-wrapper">
+        <span class="element-wrapper potentialAnswer">
           
-          <input type="radio" name="question-1" value="Answer one">
-          <label for="Answer one">Answer one</label>
+          <input type="radio" name="question-1" value="Answer one" class="incorrect">
+          <label for="Answer one">Variable contained within a function</label>
         </span>
-        <span class="element-wrapper">
+        <span class="element-wrapper potentialAnswer">
           
-          <input type="radio" name="question-1" value="Answer two">
-          <label for="Answer two">Answer two</label>
+          <input type="radio" name="question-1" value="Answer two" class ="incorrect">
+          <label for="Answer two"> any const assigned /= within your JavaScript</label>
         </span> 
-        <span class="element-wrapper">
-          <input type="radio" name="question-1" value="Answer three">
-          <label for="Answer three">Answer three</label>
+        <span class="element-wrapper potentialAnswer">
+          <input type="radio" name="question-1" value="Answer three" class="correct">
+          <label for="Answer three">variables var/let assigned out side {} </label>
         </span>
-        <span class="element-wrapper">
-          <input type="radio" name="question-1" value="Answer four">
-          <label for="Answer four">Answer four</label>
+        <span class="element-wrapper potentialAnswer">
+          <input type="radio" name="question-1" value="Answer four" class="incorrect">
+          <label for="Answer four">qantas frequent fligher points</label>
         </span>
       </div>
       </div>
@@ -55,25 +57,25 @@
 
     <div class="wrapper" id="stepTwo">
       <div class="inner-wrapper">
-        <h1>question two</h1>
+        <h1>Javascript was devloped by who?</h1>
         <div class="card">
-        <span class="element-wrapper">
+        <span class="element-wrapper potentialAnswer">
           
-          <input type="radio" name="question-2" value="Answer one">
-          <label for="Answer one">Answer one</label>
+          <input type="radio" name="question-2" value="Answer one" class="incorrect">
+          <label for="Answer one">Bill Gates who then went on to start Microsoft</label>
         </span>
-        <span class="element-wrapper">
+        <span class="element-wrapper potentialAnswer">
           
-          <input type="radio" name="question-2" value="Answer two">
-          <label for="Answer two">Answer two</label>
+          <input type="radio" name="question-2" value="Answer two" class="incorrect">
+          <label for="Answer two">steve jobs for backend logic in early apple opperating systems</label>
         </span> 
-        <span class="element-wrapper">
-          <input type="radio" name="question-2" value="Answer three">
-          <label for="Answer three">Answer three</label>
+        <span class="element-wrapper potentialAnswer">
+          <input type="radio" name="question-2" value="Answer three" class="incorrect">
+          <label for="Answer three">robert chapman, of jabo media</label>
         </span>
-        <span class="element-wrapper">
-          <input type="radio" name="question-2" value="Answer four">
-          <label for="Answer four">Answer four</label>
+        <span class="element-wrapper potentialAnswer">
+          <input type="radio" name="question-2" value="Answer four" class="correct">
+          <label for="Answer four">Brendan Eich, in 1995 for then Netscape</label>
         </span>
       </div>
       </div>
@@ -81,26 +83,26 @@
 
     <div class="wrapper" id="stepThree">
       <div class="inner-wrapper">
-        <h1>question two</h1>
+        <h1>What is Hoisting in JavaScript</h1>
       
         <div class="card">
-        <span class="element-wrapper">
+        <span class="element-wrapper potentialAnswer">
           
-          <input type="radio" name="question-3" value="Answer one">
-          <label for="Answer one">Answer one</label>
+          <input type="radio" name="question-3" value="Answer one" class="incorrect">
+          <label for="Answer one">JavaScript's default behavior of moving all arrow functions to the top of the current scope</label>
         </span>
-        <span class="element-wrapper">
+        <span class="element-wrapper potentialAnswer">
           
-          <input type="radio" name="question-3" value="Answer two">
-          <label for="Answer two">Answer two</label>
+          <input type="radio" name="question-3" value="Answer two" class="correct">
+          <label for="Answer two">JavaScript's default behavior of moving all declarations to the top of the current scope</label>
         </span> 
-        <span class="element-wrapper">
-          <input type="radio" name="question-3" value="Answer three">
-          <label for="Answer three">Answer three</label>
+        <span class="element-wrapper potentialAnswer">
+          <input type="radio" name="question-3" value="Answer three" class="incorrect">
+          <label for="Answer three">JavaScript's default behavior of moving all arguments to the top of the current scope</label>
         </span>
-        <span class="element-wrapper">
-          <input type="radio" name="question-3" value="Answer four">
-          <label for="Answer four">Answer four</label>
+        <span class="element-wrapper potentialAnswer">
+          <input type="radio" name="question-3" value="Answer four" class="incorrect">
+          <label for="Answer four">A programing laungage designed to impliment Java with Javascripy</label>
         </span>
       </div>
       </div>
@@ -108,25 +110,25 @@
 
     <div class="wrapper" id="stepFour">
       <div class="inner-wrapper">
-        <h1>question four</h1>
+        <h1>what does NAN stand for?</h1>
         <div class="card">
-        <span class="element-wrapper">
+        <span class="element-wrapper potentialAnswer">
           
-          <input type="radio" name="question-4" value="Answer one">
-          <label for="Answer one">Answer one</label>
+          <input type="radio" name="question-4" value="Answer one" class="correct">
+          <label for="Answer one">Not a number</label>
         </span>
-        <span class="element-wrapper">
+        <span class="element-wrapper potentialAnswer">
           
-          <input type="radio" name="question-4" value="Answer two">
-          <label for="Answer two">Answer two</label>
+          <input type="radio" name="question-4" value="Answer two" class="incorrect">
+          <label for="Answer two">Not a numerator</label>
         </span> 
-        <span class="element-wrapper">
-          <input type="radio" name="question-4" value="Answer three">
-          <label for="Answer three">Answer three</label>
+        <span class="element-wrapper potentialAnswer">
+          <input type="radio" name="question-4" value="Answer three" class="incorrect">
+          <label for="Answer three">garlic nann</label>
         </span>
-        <span class="element-wrapper">
-          <input type="radio" name="question-4" value="Answer four">
-          <label for="Answer four">Answer four</label>
+        <span class="element-wrapper potentialAnswer">
+          <input type="radio" name="question-4" value="Answer four" class="incorrect">
+          <label for="Answer four">Not a value</label>
         </span>
       </div>
       </div>
@@ -134,25 +136,25 @@
 
     <div class="wrapper" id="stepFive">
       <div class="inner-wrapper">
-        <h1>question five</h1>
+        <h1>"." or period in JavaScript is formally known as the what?</h1>
         <div class="card">
-        <span class="element-wrapper">
+        <span class="element-wrapper potentialAnswer">
           
-          <input type="radio" name="question-5" value="Answer one">
-          <label for="Answer one">Answer one</label>
+          <input type="radio" name="question-5" value="Answer one" class="incorrect">
+          <label for="Answer one">full stop notation</label>
         </span>
-        <span class="element-wrapper">
+        <span class="element-wrapper potentialAnswer">
           
-          <input type="radio" name="question-5" value="Answer two">
-          <label for="Answer two">Answer two</label>
+          <input type="radio" name="question-5" value="Answer two" class="incorrect">
+          <label for="Answer two">period opperator</label>
         </span> 
-        <span class="element-wrapper">
-          <input type="radio" name="question-5" value="Answer three">
-          <label for="Answer three">Answer three</label>
+        <span class="element-wrapper potentialAnswer">
+          <input type="radio" name="question-5" value="Answer three" class="correct">
+          <label for="Answer three">dot opperator</label>
         </span>
-        <span class="element-wrapper">
-          <input type="radio" name="question-5" value="Answer four">
-          <label for="Answer four">Answer four</label>
+        <span class="element-wrapper potentialAnswer">
+          <input type="radio" name="question-5" value="Answer four" class="incorrect">
+          <label for="Answer four">Method call</label>
         </span>
       </div>
       </div>
@@ -168,6 +170,10 @@
         </div>
         
     </div>
+  </div>
+  <footer>
+    <h2 class=""</h2>
+  </footer>
 
 
 <script src="java.js"></script>
