@@ -7,10 +7,13 @@ const stepFour = document.getElementById("stepFour");
 const stepFive = document.getElementById("stepFive");
 const timeLeftDisplay = document.getElementById("timeLeftDisplay");
 const potentialAnswer = document.getElementsByClassName("potentialAnswer");
-const displayAnswer = document.getElementById("message-display");
+const displayAnswer = document.querySelector("#message-display");
+const scoreInputForm = document.getElementById("saveResult")
+let pointTracker = 0;
+let yourScore=0;
 
 var timeLeft = 60;
-
+// countdown timer displayed in head of document
 function countDown() {
  
   setInterval(function(){
@@ -23,40 +26,50 @@ function countDown() {
     
     
   }, 1000)
+
+  
   
 };
+
+// function moves from landing page to first question of quiz with a start button
 function startQuiz() {
   countDown();
   stepOne.style.display = "flex";
   startPage.style.display = "none";
 };
-
+//question one using event.target and class matching for response
+//else if contains point tracker to later use to give result
 stepOne.addEventListener('click', function(event) {
   var element = event.target
   if (element.matches(".incorrect")){
-    //display message here make fucntion to push message to screen
+    displayAnswer.textContent = "incorrect"
+    setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
     stepOne.style.display = "none";
     stepTwo.style.display = "flex";
     timeLeft = timeLeft - 10;
   } else if (element.matches(".correct")) {
-    //correct message here functions diplay
+    displayAnswer.textContent = "correct"
     stepOne.style.display = "none";
     stepTwo.style.display = "flex";
+    pointTracker++;
+    setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
   }
-
-})
+});
 
 stepTwo.addEventListener('click', function(event) {
   var element = event.target
   if (element.matches(".incorrect")){
-    //display message here make fucntion to push message to screen
+    displayAnswer.textContent = "incorrect"
     stepTwo.style.display = "none";
     stepThree.style.display = "flex";
     timeLeft = timeLeft - 10;
+    setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
   } else if (element.matches(".correct")) {
-    //correct message here functions diplay
+    displayAnswer.textContent = "correct"
     stepTwo.style.display = "none";
     stepThree.style.display = "flex";
+    pointTracker++;
+    setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
   }
 
 })
@@ -64,14 +77,17 @@ stepTwo.addEventListener('click', function(event) {
 stepThree.addEventListener('click', function(event) {
   var element = event.target
   if (element.matches(".incorrect")){
-    //display message here make fucntion to push message to screen
+    displayAnswer.textContent = "incorrect"
     stepThree.style.display = "none";
     stepFour.style.display = "flex";
     timeLeft = timeLeft - 10;
+    setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
   } else if (element.matches(".correct")) {
-    //correct message here functions diplay
+    displayAnswer.textContent = "correct"
     stepThree.style.display = "none";
     stepFour.style.display = "flex";
+    pointTracker++;
+    setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
   }
 
 })
@@ -79,14 +95,17 @@ stepThree.addEventListener('click', function(event) {
 stepFour.addEventListener('click', function(event) {
   var element = event.target
   if (element.matches(".incorrect")){
-    //display message here make fucntion to push message to screen
+    displayAnswer.textContent = "incorrect"
     stepFour.style.display = "none";
     stepFive.style.display = "flex";
     timeLeft = timeLeft - 10;
+    setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
   } else if (element.matches(".correct")) {
-    //correct message here functions diplay
+    displayAnswer.textContent = "correct";
     stepFour.style.display = "none";
     stepFive.style.display = "flex";
+    pointTracker++;
+    setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
   }
 
 })
@@ -94,14 +113,28 @@ stepFour.addEventListener('click', function(event) {
 stepFive.addEventListener('click', function(event) {
   var element = event.target
   if (element.matches(".incorrect")){
-    //display message here make fucntion to push message to screen
+    displayAnswer.textContent = "incorrect"
     stepFive.style.display = "none";
-    stepFive.style.display = "flex";
+    scoreInputForm.style.display = "flex";
     timeLeft = timeLeft - 10;
+    setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
   } else if (element.matches(".correct")) {
-    //correct message here functions diplay
+    displayAnswer.textContent = "correct"
     stepFour.style.display = "none";
-    stepFive.style.display = "flex";
+    scoreInputForm.style.display = "flex";
+    pointTracker++;
+    setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
   }
 
 })
+
+
+
+
+function clearDisplay(){
+
+  setTimeout(function(){ displayAnswer.style.display = "none"; }, 500);
+  
+  
+
+};
